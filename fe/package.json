@@ -1,0 +1,43 @@
+{
+  "name": "sebx-cchvuth-fe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "e2e-only": "cypress run",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "e2e": "concurrently --kill-others \"npm run dev\" \"npm run e2e-only\"",
+    "prettier": "prettier --write ./src",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "axios": "^1.6.2",
+    "cardgames": "^1.0.11",
+    "emojify-hashes": "^1.0.0",
+    "next": "14.0.4",
+    "random-avatar-generator": "^2.0.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-redux": "^9.0.4",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
+    "cypress": "^13.6.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "husky": "^8.0.3",
+    "json-server": "^0.17.4",
+    "lint-staged": "^15.2.0",
+    "sass": "^1.69.5",
+    "typescript": "^5"
+  }
+}

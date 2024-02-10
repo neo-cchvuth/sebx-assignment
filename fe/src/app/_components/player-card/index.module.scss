@@ -1,0 +1,63 @@
+.player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(var(--child-size) * -1 / 2);
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px;
+  width: var(--child-size);
+  height: var(--child-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  &--active {
+    background: #008080c9;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  &__status {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.me {
+    h5 {
+      font-size: 16px;
+      background-color: rgba(112, 128, 144, 0.807);
+      padding: 0 8px;
+      border-radius: 8px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+
+    .card {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+
+    .my-card {
+      height: 90px;
+      width: 60px;
+      font-size: 28px;
+    }
+  }
+}

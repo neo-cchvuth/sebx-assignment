@@ -1,0 +1,15 @@
+.header {
+  width: 100vw;
+  background: slategray;
+
+  &__content {
+    height: 50px;
+    max-width: var(--width);
+    display: flex;
+    margin: auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    justify-content: flex-end;
+  }
+}

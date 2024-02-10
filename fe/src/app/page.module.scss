@@ -1,0 +1,106 @@
+.game-page {
+  margin-top: 32px;
+  width: 100vw;
+  max-width: var(--width);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  .float {
+    padding: 8px 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    h3 {
+      text-align: start;
+      font-weight: 400;
+    }
+  }
+
+  .interaction {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+
+    &__queue {
+      margin-top: 36px;
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .result {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 24px;
+    flex-direction: column;
+    animation: fadeIn 4s;
+    z-index: 1;
+    --child-size: 170px;
+
+    &--winner {
+      color: greenyellow;
+    }
+
+    &--loser {
+      color: pink;
+    }
+
+    div {
+      display: flex;
+      position: unset;
+      margin: 8px;
+    }
+  }
+
+  .circlegraph-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &.fade-out {
+      animation: fadeOut 4s forwards;
+    }
+  }
+}

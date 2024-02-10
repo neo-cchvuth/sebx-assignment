@@ -1,0 +1,26 @@
+.ciclegraph {
+  --child-size: 200px;
+  --circle-size: 400px;
+  position: relative;
+  width: var(--circle-size);
+  min-width: var(--circle-size);
+  height: var(--circle-size);
+  min-height: var(--circle-size);
+  margin: calc(var(--child-size) / 2 + 25px) calc(var(--child-size) / 2)
+    calc(var(--child-size) / 2);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid teal;
+    width: calc(100% - 2px * 2);
+    height: calc(100% - 2px * 2);
+    border-radius: 50%;
+  }
+
+  * {
+    transition: all 500ms ease-out;
+  }
+}
