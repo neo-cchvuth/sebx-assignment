@@ -2,7 +2,7 @@ import StoreProvider from '@/redux/store-provider';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import Init from './_components/init';
+import Init from './_shared/components/init';
 
 import './globals.scss';
 

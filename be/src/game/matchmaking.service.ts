@@ -7,7 +7,7 @@ import { NonDupFIFO } from '../shared/models/fifo';
 export class MatchmakingService {
   private queue = new NonDupFIFO<string>();
   private matchmakingInProgress = false;
-  private readonly poolSize = Number(process.env.POOL_SIZE || 4);
+  private readonly roomSize = Number(process.env.ROOM_SIZE || 4);
 
   constructor(private gameService: GameService) {}
 
@@ -23,12 +23,12 @@ export class MatchmakingService {
   }
 
   private matchmake(server: Server) {
-    if (this.matchmakingInProgress || this.queue.size < this.poolSize) return;
+    if (this.matchmakingInProgress || this.queue.size < this.roomSize) return;
     this.matchmakingInProgress = true;
     const pooledSocketIds = [];
     while (this.queue.size > 0) {
       pooledSocketIds.push(this.queue.dequeue());
-      if (pooledSocketIds.length === this.poolSize) {
+      if (pooledSocketIds.length === this.roomSize) {
         this.initiateGame(server, pooledSocketIds);
       }
     }

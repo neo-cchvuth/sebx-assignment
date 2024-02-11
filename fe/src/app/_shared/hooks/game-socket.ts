@@ -10,7 +10,7 @@ import {
   MatchmakingState,
   PlayersState,
   WinnersResponse,
-} from '../_models/game';
+} from '../models/game';
 
 export function useGameSocket() {
   const socket = useRef<Socket>();

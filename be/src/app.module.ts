@@ -6,7 +6,6 @@ import {
 } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
-import { SharedModule } from './shared/shared.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './shared/middlewares/logger.middleware';
@@ -26,7 +25,6 @@ import { JwtAuthGuard } from './shared/guards/jwt.guard';
       }),
     }),
     GameModule,
-    SharedModule,
     AuthModule,
     UserModule,
   ],

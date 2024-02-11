@@ -1,6 +1,6 @@
 'use client';
 
-import Input, { InputHandle } from '@/app/_components/input';
+import Input, { InputHandle } from '@/app/_shared/components/input';
 import { postLogin } from '@/redux/features/auth/reducers';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { useRouter } from 'next/navigation';
@@ -53,10 +53,7 @@ export default function Login() {
         icon="lock"
         ref={passwordRef}
       />
-      <button
-        className={`${isLoading ? 'loading disabled' : ''}`}
-        type="submit"
-      >
+      <button type="submit" disabled={isLoading}>
         Login
       </button>
     </form>

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { AvatarGenerator } from 'random-avatar-generator';
 import { useMemo } from 'react';
 
-export function Avatar({
+export default function Avatar({
   seed,
   width = 30,
   height = 30,

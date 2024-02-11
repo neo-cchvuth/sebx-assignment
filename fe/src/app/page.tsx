@@ -1,13 +1,14 @@
 'use client';
 
 import emojify from 'emojify-hashes';
+import Image from 'next/image';
 import { useMemo } from 'react';
 
-import Circlegraph from './_components/circlegraph';
-import { Header } from './_components/header';
-import Instructions from './_components/instructions';
-import { PlayerCardSummary } from './_components/player-card';
-import { useGameSocket } from './_hooks/game-socket';
+import Circlegraph from './_shared/components/circlegraph';
+import Header from './_shared/components/header';
+import Instructions from './_shared/components/instructions';
+import { PlayerCardSummary } from './_shared/components/player-card';
+import { useGameSocket } from './_shared/hooks/game-socket';
 
 import styles from './page.module.scss';
 
@@ -29,11 +30,11 @@ export default function Home() {
   const room = useMemo(() => {
     return roomId
       ? emojify(
-        roomId
-          .split('')
-          .map((c) => c.charCodeAt(0).toString(16).padStart(2, '0'))
-          .join(''),
-      ).join('')
+          roomId
+            .split('')
+            .map((c) => c.charCodeAt(0).toString(16).padStart(2, '0'))
+            .join(''),
+        ).join('')
       : null;
   }, [roomId]);
 
@@ -71,7 +72,13 @@ export default function Home() {
       case 'in_queue':
         return (
           <button className={styles['actions__queue']} disabled>
-            In queue...
+            In queue{' '}
+            <Image
+              src="/images/magnify.svg"
+              alt=""
+              height={30}
+              width={30}
+            ></Image>
           </button>
         );
       case 'in_game':
@@ -111,8 +118,7 @@ export default function Home() {
                     key={playerId}
                     isMe={playerId === player?.id}
                     username={
-                      playersState[playerId]?.playerUsername ||
-                      player.username
+                      playersState[playerId]?.playerUsername || player.username
                     }
                     point={point}
                     winnersPoint={winners.point}
@@ -126,8 +132,9 @@ export default function Home() {
 
         {player && playersState && (
           <div
-            className={`${styles['circlegraph-container']} ${winners ? styles['fade-out'] : ''
-              }`}
+            className={`${styles['circlegraph-container']} ${
+              winners ? styles['fade-out'] : ''
+            }`}
           >
             <Circlegraph
               player={player}

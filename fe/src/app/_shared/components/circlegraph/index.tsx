@@ -1,4 +1,4 @@
-import { PlayersState } from '@/app/_models/game';
+import { PlayersState } from '@/app/_shared/models/game';
 import { Player } from '@/redux/features/player/models';
 import { useEffect, useRef } from 'react';
 
@@ -50,13 +50,15 @@ export default function Circlegraph({
         }}
         turnPlayerId={turnPlayerId}
       />
-      {Object.values(playersState).filter(p => p.playerId !== player.id).map((player) => (
-        <PlayerCard
-          key={player.playerId}
-          player={player}
-          turnPlayerId={turnPlayerId}
-        />
-      ))}
+      {Object.values(playersState)
+        .filter((p) => p.playerId !== player.id)
+        .map((player) => (
+          <PlayerCard
+            key={player.playerId}
+            player={player}
+            turnPlayerId={turnPlayerId}
+          />
+        ))}
     </div>
   );
 }

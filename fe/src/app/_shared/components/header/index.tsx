@@ -5,11 +5,11 @@ import { getToken } from '@/redux/utils/token';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
-import { Avatar } from '../avatar';
+import Avatar from '../avatar';
 
 import styles from './index.module.scss';
 
-export function Header() {
+export default function Header() {
   const dispatch = useAppDispatch();
 
   const player = useAppSelector((state) => state.playerReducer.player);

@@ -1,7 +1,7 @@
-import { PlayerState } from '@/app/_models/game';
+import { PlayerState } from '@/app/_shared/models/game';
 import Image from 'next/image';
 
-import { Avatar } from '../avatar';
+import Avatar from '../avatar';
 
 import styles from './index.module.scss';
 
