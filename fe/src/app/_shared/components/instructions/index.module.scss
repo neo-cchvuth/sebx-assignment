@@ -7,3 +7,11 @@
     margin-bottom: 4px;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .instructions {
+    ul, h3 {
+      display: none;
+    }
+  }
+}
